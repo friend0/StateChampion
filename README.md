@@ -1,12 +1,11 @@
-sdpInverter
-===========
+\mainpage
+
+# Hybrid Power Inversion
+
 
 This is sandbox code for my development of a hybrid controller for solar micro inverters.
 
-# Controller
-
-This project is a microcontroller implementation of a new algorithm for power inversion
-using a switched differential inclusion to steer an output voltage trajectory to within some neighborhood around a reference signal. This neighborhood is known as the tracking band.
+This project is a microcontroller implementation of a new algorithm for power inversion using a switched differential inclusion to steer an output voltage trajectory to within some neighborhood around a reference signal. This neighborhood is known as the tracking band.
 
 This project aims to address the following issues:
 - Implement the control law on a Ti Piccolo
@@ -18,7 +17,7 @@ This project aims to address the following issues:
 
 >The purpose of this project is to design and build a prototype to implement a control algorithm to invert mildly varying DC input power obtained from renewable sources into AC power to feed standard loads.
 
-### Version
+### Version     {#mainpage}
 0.0.1
 
 ### Tech
@@ -33,10 +32,11 @@ This project aims to address the following issues:
 
 You need Git installed:
 
-```sh
+@code
 $ cd sdpInverter
 $ git clone [git-repo-url] sdpInverter
-```
+@endcode
+
 
 ### Plugins
 
@@ -65,6 +65,4 @@ MIT
 
 **Free Software, Hell Yeah!**
 
-[john gruber]:http://daringfireball.net/
-[@thomasfuchs]:http://twitter.com/thomasfuchs
-[1]:http://daringfireball.net/projects/markdown/
+[Ryan Rodriguez]: http://empireryan.com
