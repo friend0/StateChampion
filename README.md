@@ -1,9 +1,7 @@
-\mainpage
-
 # Hybrid Power Inversion
 
-
-This is sandbox code for my development of a hybrid controller for solar micro inverters.
+This project contains the develpoment of my state machines using pointers to functions.
+For the purpose of this project, I thought it would be cool to build my own state framework using something resembling OOP in straight C. 
 
 This project is a microcontroller implementation of a new algorithm for power inversion using a switched differential inclusion to steer an output voltage trajectory to within some neighborhood around a reference signal. This neighborhood is known as the tracking band.
 
