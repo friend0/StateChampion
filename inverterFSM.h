@@ -1,5 +1,5 @@
 #ifndef INVERTERFSM_H
-#define INVERTERFSM
+#define INVERTERFSM_H
 
 //////////////////////////////////////////
 // Declaration of FSM and Event objects //
@@ -90,6 +90,7 @@ void Inverter_AlmostOutOfParameters(Inverter *self, Event const *e);
 */
 void Inverter_ShutDown(Inverter *self, Event const *e);
 
+char InverterTransitionFunction(Inverter self, InverterEvent *e);
 
 #endif
 

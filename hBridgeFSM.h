@@ -71,5 +71,8 @@ void hBridge_Zero(hBridge *self, Event const *e);
 */
 void hBridge_negVDC(hBridge *self, Event const *e);
 
+
+char hBridgeTransitionFunction(hBridge self, hBridgeEvent *e);
+
 #endif
 
