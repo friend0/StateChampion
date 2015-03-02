@@ -31,13 +31,29 @@ void MpptCtor(Mppt *self) {
     _FsmCtor_(&self->super_, &Mppt_initial);
 }
 
-void Mppt_initial(Mppt *self, Event const *e) {
+//I have ommited the 'const' qualifier here because I would like to be bale to set the transition state here
+//May also need to change others for setting exit transition? will this get handled in transition function?
+void Mppt_initial(Mppt *self, Event *e) {
     /* ... initialization of Mppt attributes */
     printf("Mppt initialized");
+    e->transition = true;
     _FsmTran_((Fsm *) self, &Mppt_Disable);
 }
 
 void Mppt_Execute(Mppt *self, Event const *e) {
+
+    switch (e->transition) {
+
+        case true:
+            printf("transition is true!\n");
+            break;
+        case false:
+            printf("transition is false!\n");
+            break;
+        default:
+            break;
+    }
+
     switch (e->signal) {
         case DISABLE:
             printf("Disable");
@@ -127,12 +143,15 @@ char MpptTransitionFunction(Mppt self, MpptEvent *e) {
         {
             case 'E' :
                 e->super_.signal = EXECUTE;
+                e->super_.transition = true;
                 break;
             case 'D' :
                 e->super_.signal = DISABLE;
+                e->super_.transition = true;
                 break;
             case 'N' :
                 e->super_.signal = NO_EVENT;
+                e->super_.transition = true;
                 break;
             case '.' :
                 return -1;          // terminate the test
@@ -149,12 +168,15 @@ char MpptTransitionFunction(Mppt self, MpptEvent *e) {
         {
             case 'E' :
                 e->super_.signal = EXECUTE;
+                e->super_.transition = true;
                 break;
             case 'D' :
                 e->super_.signal = DISABLE;
+                e->super_.transition = true;
                 break;
             case 'N' :
                 e->super_.signal = NO_EVENT;
+                e->super_.transition = true;
                 break;
             case '.' :
                 return -1;          // terminate the test
@@ -170,12 +192,15 @@ char MpptTransitionFunction(Mppt self, MpptEvent *e) {
         {
             case 'E' :
                 e->super_.signal = EXECUTE;
+                e->super_.transition = true;
                 break;
             case 'D' :
                 e->super_.signal = DISABLE;
+                e->super_.transition = true;
                 break;
             case 'N' :
                 e->super_.signal = NO_EVENT;
+                e->super_.transition = true;
                 break;
             case '.' :
                 return -1;          // terminate the test
@@ -199,13 +224,13 @@ char MpptTransitionFunction(Mppt self, MpptEvent *e) {
 */
 
 
-/*
+
 int main()
 {
 
-    *//**
+    /**
       * Define which state machine will be tested
-      *//*
+    */
     #define MPPT 1
 
     int returner = 0;
@@ -213,19 +238,7 @@ int main()
     //wrapping the FSM
 
     //Take the class 'inverter', for example, and get the FSM it contains, then point it to an initialization state
-    *//**
-      #ifdef INVERTER
-      Inverter k;
-      InverterCtor(&k);
-      #elif HBRIDGE
-      hBridge k;
-      hBridgeCtor(&k);
-      #elif MPPT
-      Mppt k;
-      MpptCtor(
-      &k);
-      #endif
-      *//*
+
 
     Mppt k;
     MpptCtor(&k);
@@ -234,17 +247,6 @@ int main()
 
     for (;;)
     {
-        //Make a new event on every cycle
-        *//**
-          #ifdef INVERTER
-          InverterEvent ke;
-          #elif HBRIDGE
-          hBridgeEvent ke;
-          #elif MPPT
-          MpptEvent ke;
-          #endif
-          *//*
-
         MpptEvent ke;
 
         //printf("\nSignal<-");             //output the signal attribute of the event object
@@ -252,7 +254,6 @@ int main()
         //ke.code should be the value sampled at ADC for actual implementation
         ke.code = getc(stdin);            //obtain user input, use the data attribute 'code' to store it
         getc(stdin);                      //discard newline '\n' //
-
 
         void *funptr = k.super_.state__;
         backtrace_symbols_fd(&funptr, 1, 1);
@@ -269,4 +270,4 @@ int main()
 
     }
     return 0;
-}*/
+}

@@ -13,30 +13,6 @@
 #include <ctype.h>
 #include <execinfo.h>
 
-
-/**************************************************************************
-Inverter FSM - Public Type Definitions for Inverter FSM and Inverter Events
-***************************************************************************/
-/**
-* @brief 'type naming' of the FSM object
-*
-* The 'Inverter' struct is a container for the FSM base class.
-* Other attributes of the class are included. Class methods are
-* implemented following this.
-*/
-struct Inverter
-{
-    Fsm super_; /* extend the Fsm class */
-    //Attributes
-};
-
-struct InverterEvent
-{
-    Event super_; /* extend the Event class */
-    //Attributes
-    char code;
-};
-
 /****************************************************************
 States
 ****************************************************************/
@@ -86,6 +62,8 @@ void Inverter_default(Inverter *self, Event const *e)
 {
     switch (e->signal)
     {
+        //First encountered on wake/re-awaken states. Determine if conditions are suitable for
+        //power conversion, and whether we are inside or outside of the tracking band.
         case POWER_ON:
             printf("H-bridge to negVDC");
             _FsmTran_((Fsm *)self, &Inverter_PowerOn);
@@ -126,10 +104,12 @@ void Inverter_PowerOn(Inverter *self, Event const *e)
 {
     switch (e->signal)
     {
+        //dont care, already powering on
         case POWER_ON:
             printf("H-bridge to negVDC");
             _FsmTran_((Fsm *)self, &Inverter_PowerOn);
             break;
+
 
         case OUTSIDE_PARAMETERS:
             printf("H-bridge to zero");
@@ -141,11 +121,15 @@ void Inverter_PowerOn(Inverter *self, Event const *e)
             _FsmTran_((Fsm *)self, &Inverter_WithinParameters);
             break;
 
+            //does this count as a power on state? technically within parameters, but we would wind up here
+            //eventually since power on would transition here...so almost_out would need to be able to transition in/back in
+            //to power_on state
         case ALMOST_OUT_OF_PARAMETERS:
             printf("defaultNOEVENT");
             _FsmTran_((Fsm *)self, &Inverter_AlmostOutOfParameters);
             break;
 
+            //an intersting case...
         case SHUT_DOWN:
             printf("defaultNOEVENT");
             _FsmTran_((Fsm *)self, &Inverter_ShutDown);
@@ -244,6 +228,7 @@ void Inverter_AlmostOutOfParameters(Inverter *self, Event const *e)
 {
     switch (e->signal)
     {
+        //remove. dont care. we are already on.
         case POWER_ON:
             printf("H-bridge to negVDC");
             _FsmTran_((Fsm *)self, &Inverter_PowerOn);
@@ -254,16 +239,19 @@ void Inverter_AlmostOutOfParameters(Inverter *self, Event const *e)
             _FsmTran_((Fsm *)self, &Inverter_OutOfParameters);
             break;
 
+            //This is an interesting case, whether to keep it is debatable, but seems safest to keep it.
         case INSIDE_PARAMETERS:
             printf("H-bridge to VDC");
             _FsmTran_((Fsm *)self, &Inverter_WithinParameters);
             break;
 
+            //I dont think we need self transitions, remove.
         case ALMOST_OUT_OF_PARAMETERS:
             printf("defaultNOEVENT");
             _FsmTran_((Fsm *)self, &Inverter_AlmostOutOfParameters);
             break;
 
+            //I dont think we should go here directly, should go to outside parameters firs? remove?
         case SHUT_DOWN:
             printf("defaultNOEVENT");
             _FsmTran_((Fsm *)self, &Inverter_ShutDown);

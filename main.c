@@ -1,7 +1,7 @@
 #include "fsm.h"
+#include "mpptFSM.h"
 #include "hBridgeFSM.h"
 #include "inverterFSM.h"
-#include "mpptFSM.h"
 #include <stdio.h>
 #include <ctype.h>
 #include <execinfo.h>
@@ -11,11 +11,15 @@
 * automaton for testing purposes.
 */
 
+/*
+
 int main() {
 
-    /**
-    * Define which state machine will be tested
     */
+/**
+* Define which state machine will be tested
+*//*
+
 #define MPPT 1
 
     int returner = 0;
@@ -49,4 +53,4 @@ int main() {
         backtrace_symbols_fd(&funptr, 1, 1);
     }
     return 0;
-}
+}*/

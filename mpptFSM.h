@@ -5,19 +5,10 @@
 // Declaration of FSM and Event objects //
 //////////////////////////////////////////
 
+#include <stdbool.h>
+
 typedef struct Mppt Mppt;
 typedef struct MpptEvent MpptEvent;
-
-/****************************************************************
-Events
-****************************************************************/
-/* signals used by the Mppt FSM - Algorithm either runs, or it does not. This is a submachine of the inverterFSM.*/
-enum {
-    EXECUTE,
-    DISABLE,
-    NO_EVENT,
-};
-
 
 /**************************************************************************
 Mppt FSM - Public Type Definitions for Mppt FSM and Mppt Events
@@ -38,6 +29,17 @@ struct MpptEvent {
     Event super_; /* extend the Event class */
     //Attributes
     char code;
+
+};
+
+/****************************************************************
+Events
+****************************************************************/
+/* signals used by the Mppt FSM - Algorithm either runs, or it does not. This is a submachine of the inverterFSM.*/
+enum {
+    EXECUTE,
+    DISABLE,
+    NO_EVENT,
 };
 
 ////////////////////////////////////
@@ -71,7 +73,7 @@ void MpptCtor(Mppt *self);
 * @param self self reference to MpptFSM
 * @param e    event
 */
-void Mppt_initial(Mppt *self, Event const *e);
+void Mppt_initial(Mppt *self, Event *e);
 
 /**
 * Implements the default transition

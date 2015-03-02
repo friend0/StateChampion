@@ -8,6 +8,27 @@
 typedef struct Inverter Inverter;
 typedef struct InverterEvent InverterEvent;
 
+/**************************************************************************
+Inverter FSM - Public Type Definitions for Inverter FSM and Inverter Events
+***************************************************************************/
+/**
+* @brief 'type naming' of the FSM object
+*
+* The 'Inverter' struct is a container for the FSM base class.
+* Other attributes of the class are included. Class methods are
+* implemented following this.
+*/
+struct Inverter {
+    Fsm super_; /* extend the Fsm class */
+    //Attributes
+};
+
+struct InverterEvent {
+    Event super_; /* extend the Event class */
+    //Attributes
+    char code;
+};
+
 ////////////////////////////////////
 // Declaration of state functions //
 ////////////////////////////////////
@@ -48,8 +69,8 @@ void Inverter_initial(Inverter *self, Event const *e);
 void Inverter_default(Inverter *self, Event const *e);
 
 /**
-* Implements the state handler for the case that the H-Bridge
-* is supplying +Vdc to the input of the RLC filter.
+* This is the state we should enter upon power up, i.e. switch is thrown on, or we are recovering from sleep.
+*
 * @param self self reference to inverterFSM
 * @param e    event
 */
@@ -64,17 +85,17 @@ void Inverter_PowerOn(Inverter *self, Event const *e);
 void Inverter_OutOfParameters(Inverter *self, Event const *e);
 
 /**
-* Implements the state handler for the case that the H-Bridge
-* is supplying -Vdc to the input of the RLC filter.
+* If the panel is at an acceptable voltage, this is a valid state. Produce power here
+* by running the hBridge Fsm.
+*
 * @param self self reference to inverterFSM
 * @param e    event
 */
 void Inverter_WithinParameters(Inverter *self, Event const *e);
 
 /**
-* Implements the state handler for a source that has a trajectory
-* headed outside the allowable parameters for the inverter to deliver the
-* desired voltage and current
+* We should have transitioned here from Within_Parameters; this indicates we were within acceptable limits,
+* but are steadily moving out of acceptable parameters for power generation. Perform necessary preparation here.
 *
 * @param self self reference to inverterFSM
 * @param e    event

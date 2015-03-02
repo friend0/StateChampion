@@ -68,6 +68,8 @@ struct Fsm
 struct Event
 {
         Signal signal;
+    unsigned char transition; /* Enter, Exit, Neither */
+
 };
 
 
