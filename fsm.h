@@ -68,7 +68,7 @@ struct Fsm
 struct Event
 {
     Signal signal;
-    unsigned char transition; /* Change to boolean value when supported, will be either true or false*/
+    Signal transition; /* Change to boolean value when supported, will be either true or false*/
 };
 
 

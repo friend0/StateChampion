@@ -11,14 +11,8 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ae6a175-9ac4-43f9-b986-21896ed5c6fd" name="Default" comment="Added main file, Mppt FSM">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+    <list default="true" id="2ae6a175-9ac4-43f9-b986-21896ed5c6fd" name="Default" comment="Added a type definition for the transition signal, i.e. the transition member of the superclass is now of type short,">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fsm.h" afterPath="$PROJECT_DIR$/fsm.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inverterFSM.c" afterPath="$PROJECT_DIR$/inverterFSM.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inverterFSM.h" afterPath="$PROJECT_DIR$/inverterFSM.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mpptFSM.c" afterPath="$PROJECT_DIR$/mpptFSM.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mpptFSM.h" afterPath="$PROJECT_DIR$/mpptFSM.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="stateMachineInverterAlpha.iws" />
@@ -42,8 +36,8 @@
             <file leaf-file-name="mpptFSM.c" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/mpptFSM.c">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.12526096">
-                    <caret line="34" column="107" selection-start-line="34" selection-start-column="107" selection-end-line="34" selection-end-column="107" />
+                  <state vertical-scroll-proportion="-0.14091858">
+                    <caret line="93" column="41" selection-start-line="93" selection-start-column="41" selection-end-line="93" selection-end-column="41" />
                     <folding>
                       <element signature="e#609#625#0" expanded="true" />
                     </folding>
@@ -68,7 +62,7 @@
             <entry file="file://$PROJECT_DIR$/inverterFSM.c">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+                  <caret line="269" column="44" selection-start-line="269" selection-start-column="44" selection-end-line="269" selection-end-column="44" />
                   <folding>
                     <element signature="e#609#625#0" expanded="true" />
                   </folding>
@@ -80,7 +74,7 @@
             <entry file="file://$PROJECT_DIR$/inverterFSM.h">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="73" column="109" selection-start-line="73" selection-start-column="109" selection-end-line="73" selection-end-column="109" />
+                  <caret line="111" column="44" selection-start-line="111" selection-start-column="44" selection-end-line="111" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -90,7 +84,7 @@
             <entry file="file://$PROJECT_DIR$/hBridgeFSM.c">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="270" column="36" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
+                  <caret line="137" column="40" selection-start-line="137" selection-start-column="40" selection-end-line="137" selection-end-column="40" />
                   <folding>
                     <element signature="e#607#623#0" expanded="true" />
                   </folding>
@@ -102,7 +96,7 @@
             <entry file="file://$PROJECT_DIR$/hBridgeFSM.h">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+                  <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
                   <folding />
                 </state>
               </provider>
@@ -112,7 +106,7 @@
             <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+                  <caret line="8" column="29" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -121,8 +115,8 @@
           <file leaf-file-name="fsm.h" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/fsm.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8598131">
-                  <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+                <state vertical-scroll-proportion="-0.58411217">
+                  <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -135,8 +129,8 @@
           <file leaf-file-name="mpptFSM.h" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mpptFSM.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6775701">
-                  <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+                <state vertical-scroll-proportion="2.2897196">
+                  <caret line="98" column="35" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -159,15 +153,15 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/mainpage.txt" />
-        <option value="$PROJECT_DIR$/hBridgeFSM.c" />
-        <option value="$PROJECT_DIR$/hBridgeFSM.h" />
         <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/inverterFSM.h" />
-        <option value="$PROJECT_DIR$/inverterFSM.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/fsm.h" />
         <option value="$PROJECT_DIR$/mpptFSM.h" />
         <option value="$PROJECT_DIR$/mpptFSM.c" />
+        <option value="$PROJECT_DIR$/inverterFSM.h" />
+        <option value="$PROJECT_DIR$/inverterFSM.c" />
+        <option value="$PROJECT_DIR$/hBridgeFSM.c" />
+        <option value="$PROJECT_DIR$/hBridgeFSM.h" />
+        <option value="$PROJECT_DIR$/fsm.h" />
       </list>
     </option>
   </component>
@@ -261,23 +255,35 @@
       <option name="project" value="LOCAL" />
       <updated>1425328698674</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added transition member to Event super class">
+      <created>1425334683704</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1425334683704</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Remove const arguments, since functions will need to be able to alter the transition state of the super class">
+      <created>1425342861863</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1425342861863</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="685" y="-1057" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20546558" sideWeight="0.48541668" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20546558" sideWeight="0.46458334" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.49375" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09375" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1716418" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32186234" sideWeight="0.49375" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32186234" sideWeight="0.47291666" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32186234" sideWeight="0.50625" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32186234" sideWeight="0.52708334" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299595" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -304,7 +310,9 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Added main file, Mppt FSM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added main file, Mppt FSM" />
+    <MESSAGE value="Added transition member to Event super class" />
+    <MESSAGE value="Remove const arguments, since functions will need to be able to alter the transition state of the super class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove const arguments, since functions will need to be able to alter the transition state of the super class" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -582,14 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hBridgeFSM.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -600,28 +600,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hBridgeFSM.c">
+    <entry file="file://$PROJECT_DIR$/mpptFSM.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="270" column="36" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
-          <folding>
-            <element signature="e#607#623#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inverterFSM.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="109" selection-start-line="73" selection-start-column="109" selection-end-line="73" selection-end-column="109" />
+        <state vertical-scroll-proportion="2.2897196">
+          <caret line="98" column="35" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inverterFSM.c">
+    <entry file="file://$PROJECT_DIR$/mpptFSM.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+        <state vertical-scroll-proportion="-0.14091858">
+          <caret line="93" column="41" selection-start-line="93" selection-start-column="41" selection-end-line="93" selection-end-column="41" />
           <folding>
             <element signature="e#609#625#0" expanded="true" />
           </folding>
@@ -631,33 +621,51 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mpptFSM.c">
+    <entry file="file://$PROJECT_DIR$/inverterFSM.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12526096">
-          <caret line="34" column="107" selection-start-line="34" selection-start-column="107" selection-end-line="34" selection-end-column="107" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="44" selection-start-line="111" selection-start-column="44" selection-end-line="111" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inverterFSM.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="269" column="44" selection-start-line="269" selection-start-column="44" selection-end-line="269" selection-end-column="44" />
           <folding>
             <element signature="e#609#625#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mpptFSM.h">
+    <entry file="file://$PROJECT_DIR$/hBridgeFSM.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6775701">
-          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="40" selection-start-line="137" selection-start-column="40" selection-end-line="137" selection-end-column="40" />
+          <folding>
+            <element signature="e#607#623#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hBridgeFSM.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fsm.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8598131">
-          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.58411217">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding />
         </state>
       </provider>
