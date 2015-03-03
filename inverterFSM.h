@@ -59,14 +59,14 @@ void InverterCtor(Inverter *self);
 * @param self self reference to inverterFSM
 * @param e    event
 */
-void Inverter_initial(Inverter *self, Event const *e);
+void Inverter_initial(Inverter *self, Event *e);
 
 /**
 * Implements the default transition
 * @param self self reference to inverterFSM
 * @param e    event
 */
-void Inverter_default(Inverter *self, Event const *e);
+void Inverter_default(Inverter *self, Event *e);
 
 /**
 * This is the state we should enter upon power up, i.e. switch is thrown on, or we are recovering from sleep.
@@ -74,7 +74,7 @@ void Inverter_default(Inverter *self, Event const *e);
 * @param self self reference to inverterFSM
 * @param e    event
 */
-void Inverter_PowerOn(Inverter *self, Event const *e);
+void Inverter_PowerOn(Inverter *self, Event *e);
 
 /**
 * Implements the state handler for the case that the H-Bridge
@@ -82,7 +82,7 @@ void Inverter_PowerOn(Inverter *self, Event const *e);
 * @param self self reference to inverterFSM
 * @param e    event
 */
-void Inverter_OutOfParameters(Inverter *self, Event const *e);
+void Inverter_OutOfParameters(Inverter *self, Event *e);
 
 /**
 * If the panel is at an acceptable voltage, this is a valid state. Produce power here
@@ -91,7 +91,7 @@ void Inverter_OutOfParameters(Inverter *self, Event const *e);
 * @param self self reference to inverterFSM
 * @param e    event
 */
-void Inverter_WithinParameters(Inverter *self, Event const *e);
+void Inverter_WithinParameters(Inverter *self, Event *e);
 
 /**
 * We should have transitioned here from Within_Parameters; this indicates we were within acceptable limits,
@@ -100,7 +100,7 @@ void Inverter_WithinParameters(Inverter *self, Event const *e);
 * @param self self reference to inverterFSM
 * @param e    event
 */
-void Inverter_AlmostOutOfParameters(Inverter *self, Event const *e);
+void Inverter_AlmostOutOfParameters(Inverter *self, Event *e);
 
 /**
 * Implements the state handler for an Inverter that is about to shut down.
@@ -109,7 +109,7 @@ void Inverter_AlmostOutOfParameters(Inverter *self, Event const *e);
 * @param self self reference to inverterFSM
 * @param e    event
 */
-void Inverter_ShutDown(Inverter *self, Event const *e);
+void Inverter_ShutDown(Inverter *self, Event *e);
 
 char InverterTransitionFunction(Inverter self, InverterEvent *e);
 

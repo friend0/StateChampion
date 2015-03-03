@@ -51,14 +51,14 @@ void InverterCtor(Inverter *self)
     _FsmCtor_(&self->super_, &Inverter_initial);
 }
 
-void Inverter_initial(Inverter *self, Event const *e)
+void Inverter_initial(Inverter *self, Event *e)
 {
     /* ... initialization of Inverter attributes */
     printf("Inverter initialized");
     _FsmTran_((Fsm *)self, &Inverter_default);
 }
 
-void Inverter_default(Inverter *self, Event const *e)
+void Inverter_default(Inverter *self, Event *e)
 {
     switch (e->signal)
     {
@@ -100,7 +100,7 @@ void Inverter_default(Inverter *self, Event const *e)
 }
 
 
-void Inverter_PowerOn(Inverter *self, Event const *e)
+void Inverter_PowerOn(Inverter *self, Event *e)
 {
     switch (e->signal)
     {
@@ -145,7 +145,7 @@ void Inverter_PowerOn(Inverter *self, Event const *e)
     }
 }
 
-void Inverter_OutOfParameters(Inverter *self, Event const *e)
+void Inverter_OutOfParameters(Inverter *self, Event *e)
 {
     switch (e->signal)
     {
@@ -185,7 +185,7 @@ void Inverter_OutOfParameters(Inverter *self, Event const *e)
     }
 }
 
-void Inverter_WithinParameters(Inverter *self, Event const *e)
+void Inverter_WithinParameters(Inverter *self, Event *e)
 {
     switch (e->signal)
     {
@@ -224,7 +224,7 @@ void Inverter_WithinParameters(Inverter *self, Event const *e)
     }
 }
 
-void Inverter_AlmostOutOfParameters(Inverter *self, Event const *e)
+void Inverter_AlmostOutOfParameters(Inverter *self, Event *e)
 {
     switch (e->signal)
     {
@@ -267,7 +267,7 @@ void Inverter_AlmostOutOfParameters(Inverter *self, Event const *e)
     }
 }
 
-void Inverter_ShutDown(Inverter *self, Event const *e)
+void Inverter_ShutDown(Inverter *self, Event *e)
 {
     switch (e->signal)
     {

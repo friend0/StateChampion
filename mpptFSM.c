@@ -36,22 +36,17 @@ void MpptCtor(Mppt *self) {
 void Mppt_initial(Mppt *self, Event *e) {
     /* ... initialization of Mppt attributes */
     printf("Mppt initialized");
-    e->transition = true;
+
+    //cannot call this here, the initial event passed is a zero...
+    //e->transition = true;
     _FsmTran_((Fsm *) self, &Mppt_Disable);
 }
 
-void Mppt_Execute(Mppt *self, Event const *e) {
+void Mppt_Execute(Mppt *self, Event *e) {
 
-    switch (e->transition) {
-
-        case true:
-            printf("transition is true!\n");
-            break;
-        case false:
-            printf("transition is false!\n");
-            break;
-        default:
-            break;
+    if (e->transition == true) {
+        printf("transition is true!\n");
+        e->transition = false;
     }
 
     switch (e->signal) {
@@ -70,7 +65,13 @@ void Mppt_Execute(Mppt *self, Event const *e) {
     }
 }
 
-void Mppt_Blink(Mppt *self, Event const *e) {
+void Mppt_Blink(Mppt *self, Event *e) {
+
+    if (e->transition == true) {
+        printf("transition is true!\n");
+        e->transition = false;
+    }
+
     switch (e->signal) {
 
         case DISABLE:
@@ -90,7 +91,13 @@ void Mppt_Blink(Mppt *self, Event const *e) {
     }
 }
 
-void Mppt_Disable(Mppt *self, Event const *e) {
+void Mppt_Disable(Mppt *self, Event *e) {
+
+    if (e->transition == true) {
+        printf("transition is true!\n");
+        e->transition = false;
+    }
+
     switch (e->signal) {
         case EXECUTE:
             printf("H-bridge to negVDC");

@@ -38,14 +38,14 @@ void hBridgeCtor(hBridge *self);
 * @param self self reference to hBridgeFSM
 * @param e    event
 */
-void hBridge_initial(hBridge *self, Event const *e);
+void hBridge_initial(hBridge *self, Event *e);
 
 /**
 * Implements the default transition
 * @param self self reference to hBridgeFSM
 * @param e    event
 */
-void hBridge_default(hBridge *self, Event const *e);
+void hBridge_default(hBridge *self, Event *e);
 
 /**
 * Implements the state handler for the case that the H-Bridge
@@ -53,7 +53,7 @@ void hBridge_default(hBridge *self, Event const *e);
 * @param self self reference to hBridgeFSM
 * @param e    event
 */
-void hBridge_VDC(hBridge *self, Event const *e);
+void hBridge_VDC(hBridge *self, Event *e);
 
 /**
 * Implements the state handler for the case that the H-Bridge
@@ -61,7 +61,7 @@ void hBridge_VDC(hBridge *self, Event const *e);
 * @param self self reference to hBridgeFSM
 * @param e    event
 */
-void hBridge_Zero(hBridge *self, Event const *e);
+void hBridge_Zero(hBridge *self, Event *e);
 
 /**
 * Implements the state handler for the case that the H-Bridge
@@ -69,7 +69,7 @@ void hBridge_Zero(hBridge *self, Event const *e);
 * @param self self reference to hBridgeFSM
 * @param e    event
 */
-void hBridge_negVDC(hBridge *self, Event const *e);
+void hBridge_negVDC(hBridge *self, Event *e);
 
 
 char hBridgeTransitionFunction(hBridge self, hBridgeEvent *e);

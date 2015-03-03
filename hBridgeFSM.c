@@ -57,14 +57,14 @@ void hBridgeCtor(hBridge *self)
     _FsmCtor_(&self->super_, &hBridge_initial);
 }
 
-void hBridge_initial(hBridge *self, Event const *e)
+void hBridge_initial(hBridge *self, Event *e)
 {
     /* ... initialization of hBridge attributes */
     printf("hBridge initialized");
     _FsmTran_((Fsm *)self, &hBridge_default);
 }
 
-void hBridge_default(hBridge *self, Event const *e)
+void hBridge_default(hBridge *self, Event *e)
 {
     switch (e->signal)
     {
@@ -92,7 +92,7 @@ void hBridge_default(hBridge *self, Event const *e)
 }
 
 
-void hBridge_VDC(hBridge *self, Event const *e)
+void hBridge_VDC(hBridge *self, Event *e)
 {
     switch (e->signal)
     {
@@ -113,7 +113,7 @@ void hBridge_VDC(hBridge *self, Event const *e)
     }
 }
 
-void hBridge_Zero(hBridge *self, Event const *e)
+void hBridge_Zero(hBridge *self, Event *e)
 {
     switch (e->signal)
     {
@@ -135,7 +135,7 @@ void hBridge_Zero(hBridge *self, Event const *e)
     }
 }
 
-void hBridge_negVDC(hBridge *self, Event const *e)
+void hBridge_negVDC(hBridge *self, Event *e)
 {
     switch (e->signal)
     {

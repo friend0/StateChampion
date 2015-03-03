@@ -80,7 +80,7 @@ void Mppt_initial(Mppt *self, Event *e);
 * @param self self reference to MpptFSM
 * @param e    event
 */
-void Mppt_Execute(Mppt *self, Event const *e);
+void Mppt_Execute(Mppt *self, Event *e);
 
 /**
 * Implements the state handler for the case that the H-Bridge
@@ -88,7 +88,7 @@ void Mppt_Execute(Mppt *self, Event const *e);
 * @param self self reference to MpptFSM
 * @param e    event
 */
-void Mppt_Blink(Mppt *self, Event const *e);
+void Mppt_Blink(Mppt *self, Event *e);
 
 /**
 * Implements the state handler for the case that the H-Bridge
@@ -96,7 +96,7 @@ void Mppt_Blink(Mppt *self, Event const *e);
 * @param self self reference to MpptFSM
 * @param e    event
 */
-void Mppt_Disable(Mppt *self, Event const *e);
+void Mppt_Disable(Mppt *self, Event *e);
 
 
 char MpptTransitionFunction(Mppt self, MpptEvent *e);

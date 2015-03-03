@@ -45,10 +45,10 @@ typedef void (*State)(Fsm *, Event const *);
 /* Finite State Machine base class */
 struct Fsm
 {
-        /*
-           The function being pointed to, or the 'state'
-         */
-        State state__; /* the current state */
+    /*
+       The function being pointed to, or the 'state'
+     */
+    State state__; /* the current state */
 };
 
 
@@ -67,15 +67,14 @@ struct Fsm
  */
 struct Event
 {
-        Signal signal;
-    unsigned char transition; /* Enter, Exit, Neither */
-
+    Signal signal;
+    unsigned char transition; /* Change to boolean value when supported, will be either true or false*/
 };
 
 
 /**
  * "inlined" selfthods of Fsm class
- * */
+*/
 
 /**
  * Constructor selfthod, initializes state
