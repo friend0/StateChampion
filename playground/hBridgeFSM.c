@@ -7,7 +7,7 @@
 *and is intended for research purposes at this moment.                    *
 **************************************************************************/
 
-#include "fsm.h"
+#include "../fsm.h"
 #include "hBridgeFSM.h"
 #include <stdio.h>
 #include <ctype.h>
@@ -244,7 +244,7 @@ char hBridgeTransitionFunction(hBridge self, hBridgeEvent *e)
 * automaton for testing purposes.
 */
 
-/*
+
 int main()
 {
     int returner = 0;
@@ -277,4 +277,3 @@ int main()
     return 0;
 }
 
-*/
