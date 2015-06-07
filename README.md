@@ -63,6 +63,7 @@ Now that I've (probably) thoroughly confused you, here's a bit of a creative exc
 
 ### Readings 
 Lee and Seshia, Introduction to Embedded Systems
+
 Start out with Chapter 1, then move on to Chapter 3. Do not feel rushed, but make sure you internalize as much of this as possible. I would reccomend taking a look at Chapter 2 as well, though it is a little heavy on the calculus.
 
 The PDF is available [here](http://leeseshia.org)
