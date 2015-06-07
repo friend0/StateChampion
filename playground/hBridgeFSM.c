@@ -160,7 +160,7 @@ void hBridge_negVDC(hBridge *self, Event *e)
 * @brief Used to determine the event that should be passed to the FsmDispatch function
 *
 * Using the hBridgeEvent class, we utilize the data variable 'code' to switch the signal
-* of the Event super-class. Next, we take the updated Event signal and dispatch it to
+* of the Event super-class. Next, we tahBridgeEvent the updated Event signal and dispatch it to
 * the current state function pointed to by Fsm of the class hBridge.
 *
 *
@@ -240,7 +240,7 @@ char hBridgeTransitionFunction(hBridge self, hBridgeEvent *e)
 
 
 /**
-* The main function below is to be used with keyboard input or Bucchi
+* The main function below is to be used with hBridgeEventyboard input or Bucchi
 * automaton for testing purposes.
 */
 
@@ -250,28 +250,28 @@ int main()
     int returner = 0;
     //Declare the variable k to be of the type 'hBridge', where hBridge is the class
     //wrapping the FSM
-    hBridge k;
+    hBridge myHBridge;
 
-    //Take the class hBridge, get the FSM it contains, and point it to an initialization state
-    hBridgeCtor(&k);
-    FsmInit((Fsm *)&k, 0);
+    //TahBridgeEvent the class hBridge, get the FSM it contains, and point it to an initialization state
+    hBridgeCtor(&myHBridge);
+    FsmInit((Fsm *)&myHBridge, 0);
     for (;;)
     {
-        hBridgeEvent ke;                   //make a new event on every cycle
+        hBridgeEvent hBridgeEvent;                   //mahBridgeEvent a new event on every cycle
         printf("\nSignal<-");             //output the signal attribute of the event object
 
-        //ke.code should be the value sampled at ADC for actual implementation
-        ke.code = getc(stdin);            //obtain user input, use the data attribute 'code' to store it
+        //hBridgeEvent.code should be the value sampled at ADC for actual implementation
+        hBridgeEvent.code = getc(stdin);            //obtain user input, use the data attribute 'code' to store it
         getc(stdin);                      //discard newline '\n' //
 
-        void    *funptr = k.super_.state__;
+        void    *funptr = myHBridge.super_.state__;
         backtrace_symbols_fd(&funptr, 1, 1);
 
-        returner = hBridgeTransitionFunction(k, &ke);
+        returner = hBridgeTransitionFunction(myHBridge, &hBridgeEvent);
         if(returner == -1) return 0;
-        FsmDispatch((Fsm *)&k, (Event *)&ke);  //dispatch
+        FsmDispatch((Fsm *)&myHBridge, (Event *)&hBridgeEvent);  //dispatch
 
-        funptr = k.super_.state__;
+        funptr = myHBridge.super_.state__;
         backtrace_symbols_fd(&funptr, 1, 1);
     }
     return 0;

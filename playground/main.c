@@ -1,5 +1,4 @@
 #include "fsm.h"
-#include "mpptFSM.h"
 #include "hBridgeFSM.h"
 #include "inverterFSM.h"
 #include <stdio.h>
@@ -15,13 +14,6 @@
 
 int main() {
 
-    */
-/**
-* Define which state machine will be tested
-*//*
-
-#define MPPT 1
-
     int returner = 0;
     //Declare the variable k to be of the type 'inverter', where inverter is the class
     //wrapping the FSM
@@ -30,7 +22,8 @@ int main() {
     MpptCtor(&k);
     FsmInit((Fsm *) &k, 0);
 
-    for (; ;) {
+    //Infinite Loop
+    for (;;) {
         //Make a new event on every cycle
         MpptEvent ke;
 
@@ -53,4 +46,5 @@ int main() {
         backtrace_symbols_fd(&funptr, 1, 1);
     }
     return 0;
-}*/
+}
+*/
